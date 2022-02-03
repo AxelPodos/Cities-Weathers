@@ -102,53 +102,9 @@ const listarLugares = async(lugares = []) => {
     return id  
 }
 
-const confirmarBorrado = async(mensaje) => {
-
-    const pregunta = [
-        {
-            type: 'confirm',
-            name: 'ok',
-            mensaje
-        }
-    ]
-
-    const { ok } = await inquirer.prompt(pregunta)
-
-    return ok
-}
-
-const mostrarListadoCheckList = async(tareas = []) => {
-
-    const choices = tareas.map((tarea, i) => {
-
-        const index = `${i + 1}.`.green
-        
-        return {
-            value: tarea.id,
-            name: `${index} ${tarea.descripcion}`,
-            checked: (tarea.completadoEn) ? true : false
-        }
-    })
-
-    const pregunta = [
-        {
-            type: 'checkbox',
-            name: 'ids',
-            message: 'Selecciones',
-            choices
-        }
-    ]
-
-    const { ids } = await inquirer.prompt(pregunta)
-   
-    return ids  
-}
-
 module.exports = {
     menu,
     pausa,
     leerInput,
-    listarLugares,
-    confirmarBorrado,
-    mostrarListadoCheckList
+    listarLugares
 }
