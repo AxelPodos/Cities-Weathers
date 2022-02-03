@@ -106,7 +106,5 @@ module.exports = {
     menu,
     pausa,
     leerInput,
-    listarLugares,
-    confirmarBorrado,
-    mostrarListadoCheckList
+    listarLugares
 }
